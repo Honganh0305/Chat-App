@@ -1,0 +1,155 @@
+/* Sidebar container */
+.ls {
+  background: #001030;
+  color: #fff;
+  height: 75vh;                 
+  display: flex;
+  flex-direction: column;
+}
+
+.ls-top {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-height: 0;                
+}
+
+.ls-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ls-nav img {
+  max-width: 140px;
+  max-height: 20px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.ls-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-top: 20px;
+  background: #002670;
+}
+
+.ls-search img {
+  width: 25px;
+}
+
+.ls-search input {
+  background: transparent;
+  outline: none;
+  color: #fff;
+  font-size: 11px;
+}
+
+.ls-search input::placeholder {
+  color: #c8c8c8;
+}
+
+/* Scrollable friends list */
+.ls-list {
+  flex: 1;                      /* take remaining height */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;             /* enable vertical scroll when needed */
+  margin-top: 12px;
+  min-height: 0;                /* critical for scroll inside flex */
+}
+
+/* Single friend row */
+.friend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 6px;           /* subtle polish */
+}
+
+.friend img {
+  width: 35px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.friend div {
+  display: flex;
+  flex-direction: column;
+}
+
+.friend span {
+  color: #9f9f9f;
+  font-size: 11px;
+}
+
+/* Hover state (no stray space!) */
+.friend:hover {
+  background: #077EFF;
+}
+
+.friend:hover span {
+  color: #fff;
+}
+
+/* Optional: nicer (WebKit) scrollbar styling */
+.ls-list::-webkit-scrollbar {
+  width: 8px;
+}
+.ls-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+.ls-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+}
+.ls-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+.ls-nav .menu{
+  position:relative;
+  padding:10px 0px;
+
+}
+.menu .sub-menu{
+  position:absolute;
+  top:100%;
+  right:0;
+  width:130px;
+  padding:20px;
+  border-radius: 5px;
+  background-color: white;
+  color:black;
+  display:none;
+}
+.sub-menu hr{
+  border:none;
+  height:1px;
+  background: #a4a4a4;
+  margin:8px 0px;
+}
+.sub-menu p {
+  cursor:pointer;
+  font-size:14px;
+
+}
+.menu:hover .sub-menu {
+  display:block;
+  
+}
+.friends.border img {
+  border:3px solid #07fff3;
+}
+.friendds.border div span {
+  color:#07fff3;
+}
+@media(max-width:900px) {
+  .ls{
+    width:100%;
+  }
+}
